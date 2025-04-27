@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_manage_obj"
+        android:icon="@drawable/home"
+        android:title="Объявления" />
+    <item
+        android:id="@+id/nav_manage_models"
+        android:icon="@drawable/pluss"
+        android:title="Марки и модели" />
+    <item
+        android:id="@+id/nav_manage_bort"
+        android:icon="@drawable/garage"
+        android:title="Бортжурнал" />
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/user"
+        android:title="Выход" />
+
+</menu>

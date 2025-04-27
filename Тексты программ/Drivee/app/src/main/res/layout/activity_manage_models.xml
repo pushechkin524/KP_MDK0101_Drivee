@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Марки и модели"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <EditText
+            android:id="@+id/brandInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Новая марка"
+            android:padding="12dp"
+            android:background="@drawable/edittext_background" />
+
+        <Button
+            android:id="@+id/addBrandBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Добавить марку"
+            android:backgroundTint="@color/red"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Spinner
+            android:id="@+id/brandSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/modelInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Новая модель"
+            android:padding="12dp"
+            android:background="@drawable/edittext_background" />
+
+        <Button
+            android:id="@+id/addModelBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Добавить модель"
+            android:backgroundTint="@color/red"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

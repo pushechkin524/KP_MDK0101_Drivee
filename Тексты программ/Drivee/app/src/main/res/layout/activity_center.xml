@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="left">
+
+            <TextView
+                android:id="@+id/brandTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/modelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginStart="8dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/editVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginStart="8dp"
+                android:textColor="#000"/>
+
+
+            <TextView
+                android:id="@+id/yearTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:layout_marginStart="8dp"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/carImagePager"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/dataPublicTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Характеристики"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginTop="12dp"/>
+
+        <TextView android:id="@+id/bodyTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/colorTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/driveTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/fuelTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/horsepowerTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/mileageTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/ownersTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/transmissionTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/volumeTextView" style="@style/CarSpecItem"/>
+        <TextView android:id="@+id/vinTextView" style="@style/CarSpecItem"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Описание"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#555"
+            android:layout_marginTop="4dp"/>
+        <LinearLayout
+            android:id="@+id/userInfoBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="12dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:elevation="2dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/userAvatar"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_prof_1"
+                app:shapeAppearanceOverlay="@style/CircleImage" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/userPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#555" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.widget.ScrollView>

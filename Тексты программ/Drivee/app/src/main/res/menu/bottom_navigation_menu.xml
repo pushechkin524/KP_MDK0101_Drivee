@@ -1,0 +1,19 @@
+<!-- res/menu/bottom_navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home" />
+    <item
+        android:id="@+id/nav_saved"
+        android:icon="@drawable/star" />
+    <item
+        android:id="@+id/nav_create"
+        android:icon="@drawable/pluss" />
+    <item
+        android:id="@+id/nav_garage"
+        android:icon="@drawable/garage" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/user" />
+</menu>

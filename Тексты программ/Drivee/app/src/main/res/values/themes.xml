@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Базовая тема -->
+    <style name="Base.Theme.Drivee" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+    <style name="CarSpecItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">#444</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+
+
+    <!-- Основная тема -->
+    <style name="Theme.Drivee" parent="Base.Theme.Drivee" />
+</resources>

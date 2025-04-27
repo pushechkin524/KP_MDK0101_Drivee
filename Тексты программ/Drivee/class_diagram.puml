@@ -1,0 +1,490 @@
+@startuml
+class com.example.drivee.CreateListingActivity {
+- List<ImageView> imagePreviews
+- EditText editVin
+- Spinner spinnerDrive
+- Button btnCreateListing
+- List<Uri> selectedImages
+- {static} int MAX_PHOTOS
+# void onCreate(Bundle)
+- void getCityFromLocation()
++ void onRequestPermissionsResult(int,String[],int[])
+- void setupSpinners()
+- void openGallery()
+# void onActivityResult(int,int,Intent)
+- void resetPhotos()
+- void saveListing()
+- int parseIntSafe(String)
+}
+
+
+class com.example.drivee.FilterActivity {
+- EditText yearFrom
+- Spinner colorSpinner
+- Button applyButton
+# void onCreate(Bundle)
+- void setupSpinners()
+- void setupSpinner(Spinner,String[])
+- void returnFilters()
+- String getTextOrNull(EditText)
+- String getSpinnerValue(Spinner)
+}
+
+
+class com.example.drivee.BortjournalPost {
+- String id
+- String brand
+- String model
+- String title
+- String content
+- String userId
+- long mileage
+- String status
++ String getId()
++ void setId(String)
++ String getBrand()
++ void setBrand(String)
++ String getModel()
++ void setModel(String)
++ String getTitle()
++ void setTitle(String)
++ String getContent()
++ void setContent(String)
++ String getUserId()
++ void setUserId(String)
++ long getMileage()
++ void setMileage(long)
++ String getStatus()
++ void setStatus(String)
+}
+
+
+class com.example.drivee.CarForProfile {
+- String id
+- String brand
+- String model
+- long price
+- String status
++ String getId()
++ void setId(String)
++ String getBrand()
++ void setBrand(String)
++ String getModel()
++ void setModel(String)
++ long getPrice()
++ void setPrice(long)
++ String getStatus()
++ void setStatus(String)
+}
+
+
+class com.example.drivee.RegActivity {
+- EditText emailEditText
+- Button registerButton
+- FirebaseAuth mAuth
+- FirebaseFirestore db
+# void onCreate(Bundle)
+- void registerUser()
+- void saveUserData(String,String,String,String,String)
+}
+
+
+class com.example.drivee.AdminBortjournalAdapter {
+- List<BortjournalPost> posts
+- OnPostOpenListener openListener
+- OnPostApproveListener approveListener
+- OnPostDeleteListener deleteListener
++ AdminBortjournalAdapter.ViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(AdminBortjournalAdapter.ViewHolder,int)
++ int getItemCount()
+}
+
+
+interface com.example.drivee.AdminBortjournalAdapter$OnPostOpenListener {
+~ void onOpen(BortjournalPost)
+}
+
+interface com.example.drivee.AdminBortjournalAdapter$OnPostApproveListener {
+~ void onApprove(BortjournalPost)
+}
+
+interface com.example.drivee.AdminBortjournalAdapter$OnPostDeleteListener {
+~ void onDelete(BortjournalPost)
+}
+
+class com.example.drivee.AdminBortjournalAdapter$ViewHolder {
+~ TextView titleTextView
+~ Button approveButton
+}
+
+class com.example.drivee.AdminActivity {
+- RecyclerView recyclerView
+- AdminCarAdapter adminCarAdapter
+- List<Car> carList
+- BottomNavigationView bottomNavigationView
+- FirebaseFirestore db
+# void onCreate(Bundle)
+- void loadPendingCars()
+}
+
+
+class com.example.drivee.User {
+- String name
+- String email
+- String phone
++ String getName()
++ String getEmail()
++ String getPhone()
+}
+
+
+class com.example.drivee.AllActivity {
+- RecyclerView recyclerView
+- CarAdapter carAdapter
+- Button resetFiltersButton
+- List<Car> carList
+- Spinner brandSpinner
+- List<String> brandList
+- List<String> modelList
+- String selectedBrand
+- String selectedModel
+- ImageButton filterButton
+- FirebaseFirestore db
+- Set<String> favoriteCarIds
+- FirebaseAuth auth
+- TextView adsCountTextView
+- BottomNavigationView.OnNavigationItemSelectedListener navListener
+# void onCreate(Bundle)
+- void applyAdvancedFilters(Intent)
+- boolean checkRange(Number,String,String)
+- boolean checkString(String,String)
+# void onActivityResult(int,int,Intent)
+- void loadFavoriteCars()
+- void showFilterMenu()
+- void loadBrands()
+- void loadModels(String,Map<String,Object>)
+- void filterCars()
+- long getMileage(Car)
+- void loadCars()
+}
+
+
+class com.example.drivee.AdminCarAdapter {
+- Context context
+- List<Car> carList
++ CarViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CarViewHolder,int)
++ int getItemCount()
+- void updateCarStatus(String,String,int)
+- void deleteCar(String,int)
+}
+
+
+class com.example.drivee.AdminCarAdapter$CarViewHolder {
+~ TextView tvBrand
+~ Button btnAccept
+}
+
+class com.example.drivee.ManageModelsActivity {
+~ EditText brandInput
+~ Button addBrandBtn
+~ Spinner brandSpinner
+~ FirebaseFirestore db
+~ ArrayAdapter<String> brandAdapter
+~ List<String> brandList
+~ Map<String,List<String>> allData
+~ DocumentReference docRef
+# void onCreate(Bundle)
+- void loadBrands()
+}
+
+
+class com.example.drivee.SelectBrandActivity {
+- Spinner brandSpinner
+- Button nextButton
+- FirebaseFirestore db
+- List<String> brandList
+# void onCreate(Bundle)
+- void loadBrands()
+}
+
+
+class com.example.drivee.BortjournalActivity {
+- RecyclerView postsRecyclerView
+- Button createPostButton
+- FirebaseFirestore db
+- List<BortjournalPost> posts
+- BortjournalAdapter adapter
+# void onCreate(Bundle)
+- void loadPosts()
+}
+
+
+class com.example.drivee.BortjournalDetailActivity {
+- TextView detailBrandModel
+# void onCreate(Bundle)
+}
+
+
+class com.example.drivee.CarAdapterUser {
+- Context context
+- List<UserCar> carList
+- FirebaseFirestore db
++ CarViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CarViewHolder,int)
++ int getItemCount()
+}
+
+
+class com.example.drivee.CarAdapterUser$CarViewHolder {
+~ ImageView imageView
+~ TextView title
+}
+
+class com.example.drivee.ResetPasswordActivity {
+- EditText emailEditText
+- Button resetPasswordButton
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
+}
+
+
+class com.example.drivee.ImagePagerAdapter {
+- Context context
+- List<String> photoBase64List
++ ImageViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(ImageViewHolder,int)
++ int getItemCount()
++ void updateImages(List<String>)
+}
+
+
+class com.example.drivee.ImagePagerAdapter$ImageViewHolder {
++ ImageView imageView
+}
+
+class com.example.drivee.BortjournalAdapter {
+- Context context
+- List<BortjournalPost> postList
+- FirebaseFirestore db
++ PostViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(PostViewHolder,int)
++ int getItemCount()
+- Bitmap getCircularBitmap(Bitmap)
+}
+
+
+class com.example.drivee.BortjournalAdapter$PostViewHolder {
+~ TextView brandModelTextView
+~ ImageView profileImageView
+}
+
+class com.example.drivee.AdminBortjournalActivity {
+- RecyclerView recyclerView
+- FirebaseFirestore db
+- List<BortjournalPost> postList
+- AdminBortjournalAdapter adapter
+# void onCreate(Bundle)
+- void loadPendingPosts()
+- void openDetail(BortjournalPost)
+- void approvePost(BortjournalPost)
+- void deletePost(BortjournalPost)
+}
+
+
+class com.example.drivee.UserCar {
+- String id
+- String brand
+- String model
+- String photoUrl
+- long price
+- String status
++ String getId()
++ String getBrand()
++ String getModel()
++ String getPhotoUrl()
++ long getPrice()
++ String getStatus()
++ void setStatus(String)
+}
+
+
+class com.example.drivee.CarAdapter {
+- Context context
+- List<Car> carList
+- boolean showStatus
+- boolean showFavorite
+- FirebaseAuth auth
+- FirebaseFirestore db
++ CarViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CarViewHolder,int)
++ int getItemCount()
+- void updateFavoriteIcon(ImageButton,boolean)
+- void updateFavoriteInFirebase(String,boolean)
+}
+
+
+class com.example.drivee.CarAdapter$CarViewHolder {
+~ ImageView carImageView
+~ TextView carTitleTextView
+~ TextView carMileageTextView
+~ ImageButton favoriteButton
+}
+
+class com.example.drivee.Car {
+- String id
+- String brand
+- String model
+- String photoBase64
+- long mileage
+- long price
+- boolean isFavorite
+- String status
++ String getId()
++ String getBrand()
++ String getModel()
++ String getPhotoBase64()
++ long getMileage()
++ long getPrice()
++ boolean isFavorite()
++ void setFavorite(boolean)
++ String getStatus()
++ void setStatus(String)
+}
+
+
+class com.example.drivee.FavoritesActivity {
+- RecyclerView recyclerView
+- CarAdapter carAdapter
+- List<Car> favoriteCars
+- FirebaseFirestore db
+- FirebaseAuth auth
+- View progressBar
+# void onCreate(Bundle)
+- void loadFavoriteCars()
+- void fetchCarsOneByOne(List<String>)
+}
+
+
+class com.example.drivee.UserProfileActivity {
+- {static} int PICK_IMAGE_REQUEST
+- ImageView profileImage
+- Button selectImageBtn
+- TextView userName
+- RecyclerView userCarsRecyclerView
+- List<Car> userCars
+- CarAdapter carAdapter
+- FirebaseFirestore db
+- FirebaseAuth mAuth
+- Uri imageUri
+- String userId
+# void onCreate(Bundle)
+- void loadUserProfile()
+- void loadUserCars()
+- void openFileChooser()
+# void onActivityResult(int,int,Intent)
+- String encodeImageToBase64(Bitmap)
+- Bitmap decodeBase64(String)
+- void saveImageToFirestore(String)
+}
+
+
+class com.example.drivee.SplashActivity {
+- {static} int SPLASH_TIME_OUT
+# void onCreate(Bundle)
+}
+
+
+class com.example.drivee.MainActivity {
+- EditText emailEditText
+- Button loginButton
+- FirebaseAuth mAuth
+# void onCreate(Bundle)
+- void loginUser()
+}
+
+
+class com.example.drivee.SelectModelActivity {
+- Spinner modelSpinner
+- Button nextButton
+- FirebaseFirestore db
+- List<String> modelList
+- String selectedBrand
+# void onCreate(Bundle)
+- void loadModels()
+}
+
+
+class com.example.drivee.CenterActivity {
+- {static} String TAG
+- ViewPager2 carImagePager
+- ImageView userAvatar
+- TextView userName
+- TextView vinTextView
+- TextView driveTextView
+- TextView ownersTextView
+- FirebaseFirestore db
+- String carId
+- ImagePagerAdapter imageAdapter
+# void onCreate(Bundle)
++ void onRequestPermissionsResult(int,String[],int[])
+- void loadCarDetails()
+}
+
+
+class com.example.drivee.CreatePostActivity {
+- Spinner brandSpinner
+- EditText titleEditText
+- Button publishButton
+- FirebaseFirestore db
+- FirebaseAuth auth
+- Map<String,List<String>> brandModelMap
+# void onCreate(Bundle)
+- void loadBrands()
+- void loadModelsForBrand(String)
+- void publishPost()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.CreateListingActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.FilterActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.RegActivity
+com.example.drivee.Adapter <|-- com.example.drivee.AdminBortjournalAdapter
+com.example.drivee.AdminBortjournalAdapter +.. com.example.drivee.AdminBortjournalAdapter$OnPostOpenListener
+com.example.drivee.AdminBortjournalAdapter +.. com.example.drivee.AdminBortjournalAdapter$OnPostApproveListener
+com.example.drivee.AdminBortjournalAdapter +.. com.example.drivee.AdminBortjournalAdapter$OnPostDeleteListener
+com.example.drivee.AdminBortjournalAdapter +.. com.example.drivee.AdminBortjournalAdapter$ViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.AdminBortjournalAdapter$ViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.AdminActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.AllActivity
+com.example.drivee.Adapter <|-- com.example.drivee.AdminCarAdapter
+com.example.drivee.AdminCarAdapter +.. com.example.drivee.AdminCarAdapter$CarViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.AdminCarAdapter$CarViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.ManageModelsActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.SelectBrandActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.BortjournalActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.BortjournalDetailActivity
+com.example.drivee.Adapter <|-- com.example.drivee.CarAdapterUser
+com.example.drivee.CarAdapterUser +.. com.example.drivee.CarAdapterUser$CarViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.CarAdapterUser$CarViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.ResetPasswordActivity
+com.example.drivee.Adapter <|-- com.example.drivee.ImagePagerAdapter
+com.example.drivee.ImagePagerAdapter +.. com.example.drivee.ImagePagerAdapter$ImageViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.ImagePagerAdapter$ImageViewHolder
+com.example.drivee.Adapter <|-- com.example.drivee.BortjournalAdapter
+com.example.drivee.BortjournalAdapter +.. com.example.drivee.BortjournalAdapter$PostViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.BortjournalAdapter$PostViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.AdminBortjournalActivity
+com.example.drivee.Adapter <|-- com.example.drivee.CarAdapter
+com.example.drivee.CarAdapter +.. com.example.drivee.CarAdapter$CarViewHolder
+com.example.drivee.ViewHolder <|-- com.example.drivee.CarAdapter$CarViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.FavoritesActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.UserProfileActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.SplashActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.SelectModelActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.CenterActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.drivee.CreatePostActivity
+@enduml

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Параметры"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/yearFrom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:hint="Год от"
+                android:inputType="number"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+            <View android:layout_width="12dp" android:layout_height="match_parent"/>
+            <EditText
+                android:id="@+id/yearTo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:hint="Год до"
+                android:inputType="number"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/colorSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <Spinner
+            android:id="@+id/bodySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <Spinner
+            android:id="@+id/driveSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <Spinner
+            android:id="@+id/fuelSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <Spinner
+            android:id="@+id/transmissionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp" />
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/volumeFrom"
+                android:hint="Объем от"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+            <View android:layout_width="12dp" android:layout_height="match_parent"/>
+            <EditText
+                android:id="@+id/volumeTo"
+                android:hint="Объем до"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/powerFrom"
+                android:hint="Мощность от"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+            <View android:layout_width="12dp" android:layout_height="match_parent"/>
+            <EditText
+                android:id="@+id/powerTo"
+                android:hint="до"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ownersTo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Владельцев до"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <EditText
+                android:id="@+id/priceFrom"
+                android:hint="Цена от"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+            <View android:layout_width="12dp" android:layout_height="match_parent"/>
+            <EditText
+                android:id="@+id/priceTo"
+                android:hint="до"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/cityInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Город"
+            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/applyButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Применить"
+                android:backgroundTint="@color/red"
+                android:textColor="@android:color/white"/>
+
+            <View android:layout_width="12dp" android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Отмена"
+                android:backgroundTint="@color/red"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
